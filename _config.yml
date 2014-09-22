@@ -1,9 +1,9 @@
 # Site wide configuration
 
-title: Habens space
+title: Habens's zone
 locale: en_US
 description: >
-        This is a coder's world has not code.
+        This is a coder's world without codes.
 logo: site-logo.png
 search: true
 url: 
