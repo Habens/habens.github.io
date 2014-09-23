@@ -6,7 +6,7 @@ description: >
         This is a coder's world without codes.
 logo: site-logo.png
 search: true
-url: 
+url: http://habens.github.io
 
 
 # Jekyll configuration
@@ -47,7 +47,7 @@ owner:
   flickr: #username
   tumblr: #username
   google:
-    plus: #username
+    plus: Habens
     analytics:
     verify:
     ad-client:
