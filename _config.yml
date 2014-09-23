@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title: Habens's zone
+title: Habens's universe
 locale: en_US
 description: >
         This is a coder's world without codes.
@@ -47,7 +47,7 @@ owner:
   flickr: #username
   tumblr: #username
   google:
-    plus: Habens
+    plus: +Habens
     analytics:
     verify:
     ad-client:
