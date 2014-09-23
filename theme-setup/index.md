@@ -48,6 +48,7 @@ so-simple-theme/
 ├── _includes/
 |    ├── browser-upgrade.html   # prompt to install a modern browser for < IE9
 |    ├── disqus_comments.html   # Disqus comments script
+|    ├── duoshuo_comments.html   # Duoshuo comments script
 |    ├── footer.html            # site footer
 |    ├── head.html              # site head
 |    ├── navigation.html        # site top navigation

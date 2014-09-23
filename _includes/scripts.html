@@ -59,6 +59,10 @@
 {% endif %}
 
 {% if page.comments %}
-<!-- {% include disqus_comments.html %} -->
-  {% include duoshuo_comments.html %}
-{% endif %}
+	{% if site.owner.disqus-shortname %}
+  		{% include disqus_comments.html %}
+	{% endif %}
+	{% if site.owner.duoshuo-shortname %}
+  		{% include duoshuo_comments.html %}
+	{% endif %}
+{% endif %} <!-- /#page.comments-->

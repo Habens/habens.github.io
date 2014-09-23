@@ -35,7 +35,9 @@
         <span class="author vcard">By <span class="fn">{{ author.name }}</span></span>
         <span class="entry-date date published"><time datetime="{{ page.date | date_to_xmlschema }}"><i class="fa fa-calendar-o"></i> {{ page.date | date: "%B %d, %Y" }}</time></span>
         {% if page.modified %}<span class="entry-date date modified"><time datetime="{{ page.modified }}"><i class="fa fa-pencil"></i> {{ page.modified | date: "%B %d, %Y" }}</time></span>{% endif %}
-        {% if site.owner.disqus-shortname and page.comments == true %}<span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>{% endif %}
+	{% if site.owner.duoshuo-shortname and page.comments == true %}<span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#ds-thread">Comment</a></span>{% endif %}
+        {% if site.owner.disqus-shortname and page.comments == true %}<span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">disqusComment</a></span>{% endif %}
+
         {% if page.share %}
         <span class="social-share-twitter">
           <a href="https://twitter.com/intent/tweet?hashtags={{ page.tags | join: ',' | remove: ' ' }}&text={{ page.title | escape | replace:' ','%20' }}&url={{ site.url }}{{ page.url }}{% if author.twitter %}&via={{ author.twitter }}{% endif %}" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
@@ -54,7 +56,7 @@
         {{ content }}
 	{% if site.owner.duoshuo-shortname and page.comments == true %}
 	<div id="ds-thread" class="ds-thread" data-url="{{ page.url }}" data-title="{{ page.title }}" data-thread-key="{{ page.title }}"></div>
-	{% endif %}<!--/#duoshuo_thread-->
+	{% endif %}<!--/#ds_thread-->
         {% if site.owner.disqus-shortname and page.comments == true %}
 	<div id="disqus_thread"></div>
 	{% endif %}<!-- /#disqus_thread -->
