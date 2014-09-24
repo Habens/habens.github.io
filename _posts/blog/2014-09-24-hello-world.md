@@ -4,7 +4,7 @@ title: "Hello World"
 modified:
 categories: blog
 excerpt:
-tags: []
+tags: [hello world]
 image:
   feature: so-simple-sample-image-4.jpg
 comments: true

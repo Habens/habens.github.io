@@ -1,13 +1,13 @@
 {
-  "name": "so-simple-theme",
-  "author": "Michael Rose <michael@mademistakes.com>",
-  "homepage": "http://mmistakes.github.io/so-simple-theme/",
+  "name": "Habens's world",
+  "author": "Habens Chen <right.jie@hotmail.com>",
+  "homepage": "http://habens.github.io",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mmistakes/so-simple-theme.git"
+    "url": "git://github.com/habens/habens.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/mmistakes/so-simple-theme/issues"
+    "url": "https://github.com/habens/haens.github.io/issues"
   },
   "engines": {
     "node": ">= 0.10.0"
