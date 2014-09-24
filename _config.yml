@@ -1,9 +1,8 @@
 # Site wide configuration
 
-title: Habens's universe
+title: Habens's world
 locale: en_US
-description: >
-        This is a coder's world without codes.
+description: #This is a coder's world without codes.
 logo: site-logo.png
 search: true
 url: http://habens.github.io
