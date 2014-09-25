@@ -7,6 +7,6 @@ excerpt:
 tags: []
 image:
   feature:
-comments:
-share:
+comments: true
+share: 
 ---
