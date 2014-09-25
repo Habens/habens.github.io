@@ -1,6 +1,7 @@
 ---
 layout: {{ layout }}
 title: {{ title }}
+author: habens_chen
 modified:
 categories: {{ dir }}
 excerpt:
