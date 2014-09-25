@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello World"
-author: "Habens Chen"
+author: habens_chen
 modified:
 categories: blog
 excerpt:
