@@ -3,7 +3,7 @@ layout: post
 title: The Basic Data Struct and Algorithms
 author: habens_chen
 modified:
-categories: articles
+categories: blog
 excerpt:
 tags: [tree, struct, algorithm]
 image:
