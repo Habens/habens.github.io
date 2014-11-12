@@ -1,8 +1,8 @@
 # Site wide configuration
 
 title: Habens's world
-locale: en_US
-description: #This is a coder's world without codes.
+locale: zh_CN
+description: The Internet was meant to make the world a smaller place, but it actually feels smaller without it.
 logo: site-logo.png
 search: true
 url: http://habens.github.io
