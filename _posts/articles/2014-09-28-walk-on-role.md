@@ -7,7 +7,7 @@ categories: articles
 excerpt:
 tags: [Walk-on Role, 跑龙套]
 image:
-  feature:
+  feature: so-simple-sample-image-1.jpg
 comments: true
 share: true
 date: 2014-09-28T23:24:08+21:00
