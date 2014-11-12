@@ -16,7 +16,7 @@ share: true
 
 
 <figure class="half">
-	<img src="/images/post/14_11_12_transcendence/1.jpg" alt="image" style="max-width:600px; max-height=300px">
+	<img src="/images/post/14_11_12_transcendence/1.jpg" alt="image" style="max-width:1200px; max-height=600px">
 	<figcaption>Transcendence.</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ share: true
 到底这产物是真的具有威胁还是说是我们人类过于“胆小”？
 
 <figure class="half">
-	<img src="/images/post/14_11_12_transcendence/3.png" alt="image" style="max-width:600px; max-height=300px">
+	<img src="/images/post/14_11_12_transcendence/3.png" alt="image" style="max-width:1200px; max-height=600px">
 	<figcaption>It always me.</figcaption>
 </figure>
 
