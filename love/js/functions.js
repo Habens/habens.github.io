@@ -92,12 +92,34 @@ function startHeartAnimation() {
 	};
 })(jQuery);
 
+function getMaxDay(year, month) {
+	return new Date(year, month, 0).getDate();
+}
+
 function timeElapse(date){
 	var current = new Date();
 
-	var years = current.getFullYear()-date.getFullYear();
-	var months = current.getMonth()-date.getMonth();
-	var days = current.getDate()-date.getDate();
+	var day_current = current.getDate();
+	var month_current = current.getMonth();
+	var year_current = current.getFullYear();
+
+	var day_special = date.getDate();
+	var month_special = date.getMonth();
+	var year_special = date.getFullYear();
+
+	var days = day_current-day_special;
+	var months = month_current-month_special;
+	var years = year_current-year_special;
+
+	if (months < 0 ) { // adjust the years
+		years = years - 1;
+	}
+
+	if (days < 0 ) { // adjust the months and days
+		months = months - 1;
+		days = day_current - day_special 
+			+ getMaxDay(year_special, month_special);
+	}
 
 	var result = "";
 	if (months == 0 && days == 0) {
