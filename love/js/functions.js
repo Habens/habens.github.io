@@ -4,35 +4,35 @@ var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 
 $(function () {
-    // setup garden
+	// setup garden
 	$loveHeart = $("#loveHeart");
 	var offsetX = $loveHeart.width() / 2;
 	var offsetY = $loveHeart.height() / 2 - 55;
-    $garden = $("#garden");
-    gardenCanvas = $garden[0];
+	$garden = $("#garden");
+	gardenCanvas = $garden[0];
 	gardenCanvas.width = $("#loveHeart").width();
-    gardenCanvas.height = $("#loveHeart").height()
-    gardenCtx = gardenCanvas.getContext("2d");
-    gardenCtx.globalCompositeOperation = "lighter";
-    garden = new Garden(gardenCtx, gardenCanvas);
-	
+	gardenCanvas.height = $("#loveHeart").height()
+	gardenCtx = gardenCanvas.getContext("2d");
+	gardenCtx.globalCompositeOperation = "lighter";
+	garden = new Garden(gardenCtx, gardenCanvas);
+
 	$("#content").css("width", $loveHeart.width() + $("#code").width());
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
-    // renderLoop
-    setInterval(function () {
-        garden.render();
-    }, Garden.options.growSpeed);
+	// renderLoop
+	setInterval(function () {
+		garden.render();
+	}, Garden.options.growSpeed);
 });
 
 $(window).resize(function() {
-    var newWidth = $(window).width();
-    var newHeight = $(window).height();
-    if (newWidth != clientWidth && newHeight != clientHeight) {
-        location.replace(location);
-    }
+	var newWidth = $(window).width();
+	var newHeight = $(window).height();
+	if (newWidth != clientWidth && newHeight != clientHeight) {
+		location.replace(location);
+	}
 });
 
 function getHeartPoint(angle) {
@@ -113,12 +113,13 @@ function timeElapse(date){
 
 	if (months < 0 ) { // adjust the years
 		years = years - 1;
+		months = month_current-month_special+12;
 	}
 
 	if (days < 0 ) { // adjust the months and days
 		months = months - 1;
 		days = day_current - day_special 
-			+ getMaxDay(year_special, month_special);
+		+ getMaxDay(year_special, month_special);
 	}
 
 	var result = "";
@@ -146,11 +147,11 @@ function timeElapse(date){
 		$("#head").html("Damons, I have fallen in love with you for<br><br>");
 		$("#aniversary").html("");
 		result = "<span class=\"digit\">" + years + "</span> year \
-			  <span class=\"digit\">" + months + "</span> month \
-			  <span class=\"digit\">" + days + "</span> day \
-			  <span class=\"digit\">" + hours + "</span> hr \
-			  <span class=\"digit\">" + minutes + "</span> min \
-			  <span class=\"digit\">" + seconds + "</span> sec";
+		<span class=\"digit\">" + months + "</span> month \
+		<span class=\"digit\">" + days + "</span> day \
+		<span class=\"digit\">" + hours + "</span> hr \
+		<span class=\"digit\">" + minutes + "</span> min \
+		<span class=\"digit\">" + seconds + "</span> sec";
 	}
 
 	$("#elapseClock").html(result);
