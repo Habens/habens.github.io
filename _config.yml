@@ -32,9 +32,9 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: habens
+  name: Habens
   avatar: bio-photo.jpg
-  email: 851735891@qq.com
+  email: right.jie@gmail.com
   disqus-shortname: #habens
   duoshuo-shortname: habenschen
   weibo: HabensC
