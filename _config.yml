@@ -6,6 +6,7 @@ description: The Internet was meant to make the world a smaller place, but it ac
 logo: site-logo.png
 search: true
 url: http://habens.github.io
+#url: http://localhost:4000
 
 # Jekyll configuration
 
@@ -34,8 +35,8 @@ owner:
   name: Habens
   avatar: bio-photo.jpg
   email: right.jie@gmail.com
-  disqus-shortname: #habens
-  duoshuo-shortname: habenschen
+  disqus-shortname: habens
+  duoshuo-shortname: #habenschen
   weibo: HabensC
   twitter: julyCWJ
   facebook:
