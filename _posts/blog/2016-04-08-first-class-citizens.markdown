@@ -23,44 +23,56 @@ share: true
 
 以 Java 举个例子：函数a，想要调用函数b。虽然a并不关心函数b是从哪儿来的，只要函数b可以完成这个特定的功能即可。但是在 Java 的世界里函数必须要依附在对象上，所以函数a必须依附在对象A上，函数b必须依附在对象B上，函数a必须通过一个对象才能找到函数b，如下：
 
-    public class A {
-    	public voidd a(Object o) {
-    		System.out.println("a is invoked");
-    		o.getClass().getMethod("b").invoke(o);
-       }
-    }
-    
-    public class B {
-    	public void b() {
-    		System.out.println("b is invoked");
-    	}
-    }
+```java
+public class A {
+	public voidd a(Object o) {
+		System.out.println("a is invoked");
+		o.getClass().getMethod("b").invoke(o);
+   }
+}
+
+public class B {
+	public void b() {
+		System.out.println("b is invoked");
+	}
+}
+```
 
 函数b可以这样传递给函数a：
-    
-    new A().a(new B());
+
+```java
+new A().a(new B());
+```
 
 结果如下：
-    
-    a is invoked
-    b is invoked
+
+```
+a is invoked
+b is invoked
+```
 
 通过这个简单的例子，你可以看出，非一等公民的函数生存条件有多么的恶劣，通讯的阻力有多大。
 
 下面再来看一个函数是一等公民的 Common Lisp 的世界里，怎么去定义两个函数
 
-    (defun a (b) (format t "a is invoked~%") 
-                 (funcall b))
-    (defun b () (format t "b is invoked"))
+```common_lisp
+(defun a (b) (format t "a is invoked~%") 
+             (funcall b))
+(defun b () (format t "b is invoked"))
+```
 
 函数b可以这样传递给函数a：
 
-    (a #'b)
+```common_lisp
+(a #'b)
+```
 
 结果如下：
-    
-    a is invoked
-    b is invoked
+
+```
+a is invoked
+b is invoked
+```
 
 在函数是一等公民的世界里，函数a可以不再依附于对象A而单独存在，函数a可以直接与函数b交流，不再需要通过对象才能找到函数b。这里真是一个函数的天堂。
 
