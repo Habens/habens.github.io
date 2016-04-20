@@ -13,11 +13,11 @@ comments: true
 share: true
 ---
 
-ommon Lisp 语言特性时，**作用域**与**生命周期**这两个概念往往是很有用的。这些概念在必须引用一些外部对象或结构时被引出。**作用域**指的是在一个程序中可能发生引用的时间和空间区域。**生命周期**指的是在一个程序中可能发生引用的时间段。
+Common Lisp 语言特性时，**作用域**与**生命周期**这两个概念往往是很有用的。这些概念在必须引用一些外部对象或结构时被引出。**作用域**指的是在一个程序中可能发生引用的时间和空间区域。**生命周期**指的是在一个程序中可能发生引用的时间段。
 
 举一个简单的例子，请看下面的程序：
 
-```
+```common_lisp
 (defun copy-cell (x) (cons (car x) (cdr x)))
 ```
 
@@ -25,7 +25,7 @@ ommon Lisp 语言特性时，**作用域**与**生命周期**这两个概念往�
 
 在 Common Lisp 中，在执行一些语言结构时会**创建**（established）一个可引用的实体，该实体的作用域和生命周期都是相对于该结构和该实体被创建的时间（在执行该结构的时间段内）来说的。这里有必要指出，这个**实体**不仅仅指 Common Lisp 的数据对象，比如 **symbols** 和 **conses**，而且包含 **变量绑定**（variable bindings）（一般变量和特殊变量都包括），**catchers**，和 **go 标签**。重要的是要区分清楚**实体**和**实体的名字**。就像下面这个函数定义
 
-```
+```common_lisp
 (defun foo (x y) (* x (+ y 1)))
 ```
 
@@ -46,7 +46,7 @@ ommon Lisp 语言特性时，**作用域**与**生命周期**这两个概念往�
 例如：**词法作用域**函数的**参数绑定**具有**不定生命周期**。（相反的是，在 Algol 里，词法作用与函数参数的绑定具有动态生命周期）
 
 
-```
+```common_lisp
 (defun compose(f g)
    #'(lambda (x)
        (funcall f (funcall g x))))
@@ -54,7 +54,7 @@ ommon Lisp 语言特性时，**作用域**与**生命周期**这两个概念往�
 
 给定两个参数，立即返回一个他们值的函数。因为返回了函数，f 和 g 的参数绑定不会立即消失，当返回的函数被调用时，依然可以使用这些绑定。所以：
 
-```
+```common_lisp
 (funcall (compose #'sqrt #'abs) -9.0)
 ```
 
@@ -68,7 +68,7 @@ ommon Lisp 语言特性时，**作用域**与**生命周期**这两个概念往�
 
 在词法作用域的情况下，如果两个结构是词法嵌套的，并且他们是使用相同名字创建的实体，那么内部的结构的引用表示内部名字创建出的实体；内部的名字遮蔽了外部的名字。外部的表示由外部名字创建的实体。例如：
 
-```
+```common_lisp
 (defun test (x z)
   (let ((z (* x 2))) (print z))
   z)
@@ -82,7 +82,7 @@ let 结构对变量 z 的绑定遮蔽了函数 test 的参数绑定。在 print 
 
 在一个动态生命周期中，通过名字去引用一个实体时，该引用总是指向那个还没有销毁的，最近使用这个名字去创建的实体。例如：
 
-```
+```common_lisp
 (defun fun1 (x)
   (catch 'trap (+ 3 (fun2 x))))
 
@@ -95,7 +95,7 @@ let 结构对变量 z 的绑定遮蔽了函数 test 的参数绑定。在 print 
 
 思考一下 `(fun1 7 )`。结果将是10。当 throw 被执行时，显然有两个具有相同名字 trap 的 catchers：一个在执行 fun1 是被创建，另一个在执行 fun2 时被创建。后者更加贴近，所以值 7 从 fun2 中被 catch 返回。从 fun3 的角度来看，fun2 中的 catch 遮蔽了 fun1 中的 catch。如果 fun2 被定义成：
 
-```
+```common_lisp
 (defun fun2 (y)
   (catch 'snare (* 5 (fun3 y))))
 ```
@@ -124,7 +124,7 @@ function 构造中出现的 lambda-expressions 词法作用域的规则，通常
 
 使用词法作用域的结构每次执行都会为每个创建的实体生成一个新名字。所以动态遮蔽是不可能发生的（虽然词法遮蔽是可能的）。这一点在涉及到动态生命周期时是特别重要的。例如：
 
-```
+```common_lisp
 (defun contorted-example (f g x)
   (if (= x 0) 
       (funcall f) 
@@ -137,7 +137,7 @@ function 构造中出现的 lambda-expressions 词法作用域的规则，通常
 
 如果这样调用 `(contorted-example nil nil 2)`。执行结果是 4。在它的执行过程中，两个 `block`穿插了 3 次 contorted-example 调用：
 
-```
+```common_lisp
 (contorted-example nil nil 2) 
 
   (block here ...) 
@@ -161,7 +161,7 @@ function 构造中出现的 lambda-expressions 词法作用域的规则，通常
 
 这个 contorted-example 函数能够工作，是因为名为 f 的函数在退出点的生命周期内被调用。块退出点和 non-special 变量绑定一样拥有词法作用域，但是不一样的是她拥有的是动态生命周期而不是不定生命周期。一旦执行流离开了块结构，这个退出点就被销毁了。例如：
 
-```
+```common_lisp
 (defun illegal-example ()
   (let ((y (block here #'(lambda (z) (return-from here z))))) 
     (if (numberp y) y (funcall y 5))))
