@@ -55,22 +55,20 @@ share: true
 9. Enjoy
 
 <figure class="third">
-	<a href="/images/post/diy-keyboard/0.pic.jpg"><img src="/images/post/diy-keyboard/0.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/1.pic.jpg"><img src="/images/post/diy-keyboard/1.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/2.pic.jpg"><img src="/images/post/diy-keyboard/2.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/3.pic.jpg"><img src="/images/post/diy-keyboard/3.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/4.pic.jpg"><img src="/images/post/diy-keyboard/4.pic.jpg" alt="image"></a>
-	<a href="/images/post/diy-keyboard/5.pic.jpg"><img src="/images/post/diy-keyboard/5.pic.jpg" alt="image"></a>
-	<a href="/images/post/diy-keyboard/6.pic.jpg"><img src="/images/post/diy-keyboard/6.pic.jpg" alt="image"></a>
-	<a href="/images/post/diy-keyboard/7.pic.jpg"><img src="/images/post/diy-keyboard/7.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/8.pic.jpg"><img src="/images/post/diy-keyboard/8.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/9.pic.jpg"><img src="/images/post/diy-keyboard/9.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/10.pic.jpg"><img src="/images/post/diy-keyboard/10.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/11.pic.jpg"><img src="/images/post/diy-keyboard/11.pic.jpg" alt="image"></a>
-	<a href="/images/post/diy-keyboard/12.pic.jpg"><img src="/images/post/diy-keyboard/12.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/13.pic.jpg"><img src="/images/post/diy-keyboard/13.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/14.pic.jpg"><img src="/images/post/diy-keyboard/14.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/15.pic.jpg"><img src="/images/post/diy-keyboard/15.pic.jpg" alt="image"></a>
 	<a href="/images/post/diy-keyboard/16.pic.jpg"><img src="/images/post/diy-keyboard/16.pic.jpg" alt="image"></a>
+	<a href="/images/post/diy-keyboard/5.pic.jpg"><img src="/images/post/diy-keyboard/5.pic.jpg" alt="image"></a>
+	<a href="/images/post/diy-keyboard/6.pic.jpg"><img src="/images/post/diy-keyboard/6.pic.jpg" alt="image"></a>
+	<a href="/images/post/diy-keyboard/7.pic.jpg"><img src="/images/post/diy-keyboard/7.pic.jpg" alt="image"></a>
 </figure>
 
