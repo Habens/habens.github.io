@@ -85,7 +85,6 @@ if (big_long_calculation()) {
 
 ```common_lisp
 CL-USER> (macroexpand-1 '(aif (big-long-calculation) (foo it)))
-
 (let ((it (big-long-calculation)))
   (if it
     (foo it)
