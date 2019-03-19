@@ -8,3 +8,4 @@ Gemfile.lock
 .sass-cache
 npm-debug.log
 _config-local.yml
+.idea
