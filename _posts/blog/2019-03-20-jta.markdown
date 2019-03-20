@@ -31,7 +31,7 @@ JTA 包由三部分组成：
 * 事务管理器提供支持事务界定、事务资源管理、同步和事务上下文传播所需的服务和管理功能。
 * 应用服务器(或TP监视器)提供了支持应用程序运行时环境所需的基础设施，其中包括事务状态管理。此类应用程序服务器的一个例子就是EJB服务器。
 * 资源管理器(通过资源适配器)提供对资源的应用程序访问。资源管理器通过实现事务管理器用于通信事务关联、事务完成和恢复工作的事务资源接口来参与分布式事务。这种资源管理器的一个例子就是关系数据库服务器。
-* 为在现代应用服务器环境中操作而开发的基于组件的事务应用程序依赖于应用服务器通过声明性事务属性设置提供事务管理支持。此类应用程序的一个例子是使用行业标准Enterprise javabean (EJB)组件体系结构开发的应用程序。此外，其他一些独立的Java客户机程序可能希望使用应用服务器或事务管理器提供的高级接口来控制它们的事务边界。
+* 为在现代应用服务器环境中操作而开发的基于组件的事务应用程序依赖于应用服务器通过声明性事务属性设置提供事务管理支持。此类应用程序的一个例子是使用行业标准Enterprise javabean (EJB)组件体系结构开发的应用程序。此外，其他一些独立的Java客户端程序可能希望使用应用服务器或事务管理器提供的高级接口来控制它们的事务边界。
 * 通信资源管理器(CRM)支持事务上下文传播和对传入和传出请求的事务服务的访问。JTA文件没有指定与通信相关的需求。有关事务管理器之间互操作性的更多细节，请参阅JTS规范。
 
 从事务管理器的角度，事务服务的具体实现不需要暴露；只需要定义高级接口，就可以从事务服务的用户驱动事务界定、资源注册、同步和恢复过程。JTA的目的是定义事务管理器所需的本地Java接口，以支持Java企业分布式计算环境中的事务管理。在下面的图中，小半圆表示JTA规范。文档的第3章详细描述了规范的每个部分。
@@ -48,7 +48,7 @@ JTA 包由三部分组成：
 
 ## 2 与其他 Java apis 的关系
 ### 2.1 Enterprise JavaBeans
-Enterprise javabean体系结构要求EJB容器通过实现`javax.transaction`来支持应用程序级事务界定。`UserTransaction`接口。`UserTransaction`接口用于EJB Bean实现者(用于TX_BEAN_MANAGED Bean)和希望在用Java编程语言编写的程序中显式划分事务边界的客户机程序员。
+Enterprise javabean体系结构要求EJB容器通过实现`javax.transaction`来支持应用程序级事务界定。`UserTransaction`接口。`UserTransaction`接口用于EJB Bean实现者(用于TX_BEAN_MANAGED Bean)和希望在用Java编程语言编写的程序中显式划分事务边界的客户端程序员。
 
 ### 2.2 JDBC 2.0 Standard Extension API
 JDBC 2.0扩展规范中包含的新特性之一是对分布式事务的支持。为JDBC驱动程序创建了两个新的JDBC接口，以支持使用Java事务API的XAResource接口的分布式事务。新的JDBC 2.0接口是`javax.sql.XAConnection` 和`javax.sql.XADataSource`。
@@ -65,13 +65,13 @@ Java事务服务(JTS)是一种用于构建事务管理器的规范，它在高�
 Java事务API由三个元素组成:高级应用程序事务界定接口、用于应用程序服务器的高级事务管理器接口和用于事务资源管理器的X/Open XA协议的标准Java映射。本章详细说明了这些元素。
 
 ### 3.1 UserTransaction 接口
-`javax.transaction.UserTransaction` 接口为应用程序提供了以编程方式控制事务边界的能力。此接口可由Java客户机程序或EJB bean使用。
+`javax.transaction.UserTransaction` 接口为应用程序提供了以编程方式控制事务边界的能力。此接口可由Java客户端程序或EJB bean使用。
 
 `UserTransaction.begin` 方法启动一个全局事务，并将该事务与调用线程关联。事务管理器透明地管理事务到线程的关联。
 
 JTA 对嵌套事务不做要求。当调用线程已经与事务关联，且事务管理器实现不支持嵌套事务时，执行`UserTransaction.begin`方法将抛出NotSupportedException异常。
 
-应用程序之间的事务上下文传播由客户机和服务器机器上的底层事务管理器实现提供。用于传播的事务上下文格式依赖于协议，必须在客户机和服务器主机之间协商。例如，如果事务管理器是JTS规范的实现，它将使用CORBA OTS 1.1规范中指定的事务上下文传播格式。事务传播对应用程序是透明的。
+应用程序之间的事务上下文传播由客户端和服务器机器上的底层事务管理器实现提供。用于传播的事务上下文格式依赖于协议，必须在客户端和服务器主机之间协商。例如，如果事务管理器是JTS规范的实现，它将使用CORBA OTS 1.1规范中指定的事务上下文传播格式。事务传播对应用程序是透明的。
 
 #### 3.1.1 UserTransaction 对 EJB Service 的支持
 EJB服务器需要支持`UserTransaction` 接口，以便EJB bean使用TX_BEAN_MANAGED事务属性。`UserTransaction` 通过使用`EJBContext` 接口的`getUserTransaction`方法暴露给EJB组件。因此，EJB应用程序不直接与事务管理器接口进行事务界定;而是，EJB bean依赖EJB服务器为其所有事务工作提供支持，这些事务工作在Enterprise JavaBeans规范[5]中定义。
@@ -95,11 +95,11 @@ utx.commit();
 ```
 
 #### 3.1.2 UserTransaction 对事务性客户端的支持
-Java客户机程序可以通过应用服务器的支持或客户机主机上的事务管理器的支持来使用`UserTransaction`接口。
+Java客户端程序可以通过应用服务器的支持或客户端主机上的事务管理器的支持来使用`UserTransaction`接口。
 
 应用服务器的厂商被期望为管理员提供工具，以便在JNDI名称空间中配置`UserTransaction` 对象绑定。`UserTransaction` 对象的实现必须同时实现`javax.naming.Referenceable`和`java.io.Serializable`，以便对象可以存储在所有JNDI命名上下文中。
 
-如果应用服务器支持事务客户端执行的事务界定，则应用服务器必须支持客户端程序使用JNDI查找机制获取`UserTransaction`对象的引用。由于JTA没有为`UserTransaction`定义JNDI名称，客户机程序应该使用适当的配置机制将名称字符串传递给JNDI查找方法。
+如果应用服务器支持事务客户端执行的事务界定，则应用服务器必须支持客户端程序使用JNDI查找机制获取`UserTransaction`对象的引用。由于JTA没有为`UserTransaction`定义JNDI名称，客户端程序应该使用适当的配置机制将名称字符串传递给JNDI查找方法。
 
 这种实现的一个例子是通过使用系统属性。由以下代码进行说明：
 ```
@@ -412,7 +412,7 @@ Connection con = (Connection)res.getConnection();
 
 ### 4.2 事务关联和连接请求流
 此会话简要介绍应用程序服务器如何处理来自应用程序的连接请求。下图说明了JTA的用法。所示的步骤只是为了说明，并不是规定:
-1. 假设客户机使用TX_REQUIRED事务属性调用EJB bean，并且客户机不与全局事务关联，那么EJB容器通过调用`TransactionManager.Begin`方法启动全局事务。
+1. 假设客户端使用TX_REQUIRED事务属性调用EJB bean，并且客户端不与全局事务关联，那么EJB容器通过调用`TransactionManager.Begin`方法启动全局事务。
 2. 事务启动后，容器调用bean方法。作为业务逻辑的一部分，bean使用相关资源适配器提供的API请求基于连接的资源。
 3. 应用服务器通过`ResourceFactory.getTransactionalResource`方法从资源适配器获取资源。
 4. 资源适配器创建TransactionalResource对象和关联的xaresource和connection对象。
