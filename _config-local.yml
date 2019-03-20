@@ -1,0 +1,55 @@
+# Site wide configuration
+
+title: Habens's world
+locale: zh_CN
+description: The Internet was meant to make the world a smaller place, but it actually feels smaller without it.
+logo: site-logo.png
+search: true
+url: http://localhost:4000
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..2
+  enable_coderay: false
+
+mathjax: true
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+
+
+# Site owner
+owner:
+  name: Habens
+  avatar: bio-photo.jpg
+  email: right.jie@gmail.com
+  disqus-shortname: habens
+  weibo: HabensC
+  twitter: julyCWJ
+  facebook:
+  github: Habens
+  stackexchange: #http://stackoverflow.com/users/123456/username
+  linkedin: #username
+  instagram: #username
+  flickr: #username
+  tumblr: #username
+  google:
+    plus: Habens
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
