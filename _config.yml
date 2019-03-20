@@ -5,8 +5,7 @@ locale: zh_CN
 description: The Internet was meant to make the world a smaller place, but it actually feels smaller without it.
 logo: site-logo.png
 search: true
-url: http://habens.github.io
-#url: http://localhost:4000
+url: https://habens.github.io
 
 # Jekyll configuration
 
