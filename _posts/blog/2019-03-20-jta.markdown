@@ -12,7 +12,7 @@ image:
 comments: true
 share: true
 ---
-[原文链接](https://www.oracle.com/technetwork/java/javaee/jta/index.html)
+[原文链接](http://download.oracle.com/otn-pub/jcp/jta-1.1-spec-oth-JSpec/jta-1_1-spec.pdf)
 
 * Table of Contents
 {:toc}
