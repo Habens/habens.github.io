@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Habens's world
+title: Habens
 locale: zh_CN
-description: The Internet was meant to make the world a smaller place, but it actually feels smaller without it.
+description: 积跬步，至千里
 logo: site-logo.png
 search: true
 url: https://habens.github.io
