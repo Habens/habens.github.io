@@ -38,8 +38,10 @@ owner:
   email: right.jie@gmail.com
   disqus-shortname:
   gitment:
-    owner: Habens
+  gittalk: true
+  comment-repo:
     repo: gitment-comments
+    owner: Habens
     client_id: e358fd74b8920c4ea1d9
     client_secret: 64384b1331d4e39fcba38c16b8615af9debdfea7
     maxCommentHeight: 20
