@@ -61,4 +61,10 @@
 	{% if site.owner.disqus-shortname %}
   		{% include disqus_comments.html %}
 	{% endif %}
+	{% if site.owner.gitment %}
+  		{% include gitment_comments.html %}
+	{% endif %}
+	{% if site.owner.gittalk %}
+  		{% include gittalk_comments.html %}
+	{% endif %}
 {% endif %} <!-- /#page.comments-->

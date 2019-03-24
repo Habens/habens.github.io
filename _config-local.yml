@@ -16,7 +16,7 @@ sass:
   sass_dir: _sass
   style: compressed
 gems:
-  - jekyll-sitemap
+- jekyll-sitemap
 
 kramdown:
   auto_ids: true
@@ -36,7 +36,15 @@ owner:
   name: Habens
   avatar: bio-photo.jpg
   email: right.jie@gmail.com
-  disqus-shortname: habens
+  disqus-shortname:
+  gitment:
+  gittalk: true
+  comment-repo:
+    repo: gitment-comments
+    owner: Habens
+    client_id: e358fd74b8920c4ea1d9
+    client_secret: 64384b1331d4e39fcba38c16b8615af9debdfea7
+    maxCommentHeight: 20
   weibo: HabensC
   twitter: julyCWJ
   facebook:

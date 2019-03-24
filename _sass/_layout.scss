@@ -302,11 +302,23 @@ span + .entry-title {
 #disqus_thread {
 	margin-top: 2em;
 }
+// Gittalk Comments
+#gitalk_thread {
+	margin-top: 2em;
+}
+
 // Pagination
 .pagination {
-	margin-top: 2em;
-	text-align: center;
+	margin: 2em 0 1em;
 }
+
+.pagination-previous,.pagination-next {
+}
+
+.pagination-next {
+	float: right;
+}
+
 // Page layout
 #home,
 #page {
