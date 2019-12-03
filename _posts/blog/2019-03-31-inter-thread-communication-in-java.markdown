@@ -156,24 +156,24 @@ public class LockConditionSolution {
     letterPrintThread.join();
   }
 
-
   @Test
   public void verifyLockWithCondition() throws InterruptedException {
 
     Lock lock = new ReentrantLock(true);
-    Condition condition = lock.newCondition();
+    Condition conditionOfNumberPrint = lock.newCondition();
+    Condition conditionOfLetterPrint = lock.newCondition();
     Thread numberPrintThread = new Thread(() -> {
       for (int i = 1; i < 52; i = i + 2) {
         lock.lock();
         try {
           while (scheduler.getEnabledPrinter() != Printer.NUMBER) {
-            condition.wait();
+            conditionOfNumberPrint.wait();
           }
           for (int j = 0; j < 2; j++) {
             System.out.print(i + j);
           }
           scheduler.setEnabledPrinter(Printer.LETTER);
-          condition.signal();
+          conditionOfLetterPrint.signal();
         } catch (InterruptedException e) {
           e.printStackTrace();
         } finally {
@@ -187,11 +187,11 @@ public class LockConditionSolution {
         lock.lock();
         try {
           while (scheduler.getEnabledPrinter() != Printer.LETTER) {
-            condition.wait();
+            conditionOfNumberPrint.wait();
           }
           System.out.print(i);
           scheduler.setEnabledPrinter(Printer.NUMBER);
-          condition.signal();
+          conditionOfLetterPrint.signal();
         } catch (InterruptedException e) {
           e.printStackTrace();
         } finally {
